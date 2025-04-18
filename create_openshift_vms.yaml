@@ -32,6 +32,7 @@
       cpus: "{{ master_vm_cpus }}"
       memory: "{{ master_vm_memory }}"
       node_role: master
+      datastore: "{{ datastore_master }}"
     with_items: "{{ master_ip_addresses }}"
     loop_control:
       loop_var: ip
@@ -45,6 +46,7 @@
       cpus: "{{ worker_vm_cpus }}"
       memory: "{{ worker_vm_memory }}"
       node_role: worker
+      datastore: "{{ datastore_worker }}"
     with_items: "{{ worker_ip_addresses }}"
     loop_control:
       loop_var: ip
